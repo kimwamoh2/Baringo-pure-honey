@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baringo Honey - Pure Kenyan Gold</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff8f0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #8B4513;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #8B4513;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('honey-jars.jpg') center/cover no-repeat;
+            text-align: center;
+            color: #fff;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.4);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #8B4513;
+            color: #fff;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #6B3410;
+        }
+
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #8B4513;
+        }
+
+        .section-subtitle {
+            font-size: 18px;
+            margin-bottom: 50px;
+            color: #666;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 50px;
+        }
+
+        .about-text {
+            flex: 1;
+            padding-right: 50px;
+        }
+
+        .about-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .about-image img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        /* Product Showcase */
+        .product-showcase {
+            padding: 80px 0;
+            background: #fff;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .product-card {
+            background: #fff8f0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .product-image {
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.1);
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-info h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #8B4513;
+        }
+
+        .product-info p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .product-price {
+            font-size: 24px;
+            font-weight: 700;
+            color: #8B4513;
+            margin-bottom: 15px;
+        }
+
+        /* Delivery Info Section */
+        .delivery-info {
+            padding: 80px 0;
+            background: #fff8f0;
+            text-align: center;
+        }
+
+        .delivery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .delivery-item {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .delivery-item i {
+            font-size: 40px;
+            color: #8B4513;
+            margin-bottom: 20px;
+        }
+
+        .delivery-item h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #8B4513;
+        }
+
+        /* Quality Section */
+        .quality {
+            padding: 80px 0;
+            background: #fff8f0;
+            text-align: center;
+        }
+
+        .quality-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .quality-item {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .quality-item i {
+            font-size: 40px;
+            color: #8B4513;
+            margin-bottom: 20px;
+        }
+
+        .quality-item h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #8B4513;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .testimonial-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: left;
+        }
+
+        .testimonial-card p {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: #666;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: #8B4513;
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #8B4513, #A0522D);
+            text-align: center;
+            color: #fff;
+        }
+
+        .cta h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: #fff;
+            padding: 50px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-column h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .footer-column p, .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-column ul li a:hover {
+            color: #fff;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: #555;
+            color: #fff;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            transition: background 0.3s;
+        }
+
+        .social-links a:hover {
+            background: #8B4513;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            color: #ccc;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .nav-links {
+                margin-top: 15px;
+                flex-wrap: wrap;
+            }
+
+            .nav-links li {
+                margin: 0 15px 10px 0;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .about-content {
+                flex-direction: column;
+            }
+
+            .about-text {
+                padding-right: 0;
+                margin-bottom: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">Baringo Honey</a>
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#delivery">Delivery</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Pure Baringo Honey</h1>
+                <p>From the heart of Kenya to your table - authentic, raw honey straight from Baringo, delivered fresh from Nairobi</p>
+                <a href="#shop" class="btn">Shop Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">About Our Honey</h2>
+            <p class="section-subtitle">Discover the golden nectar that captures the essence of Kenya's finest landscapes</p>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Baringo Honey is a premium, raw honey sourced directly from the pristine landscapes of Baringo County in Kenya. Our honey is harvested using traditional beekeeping methods that have been passed down through generations, ensuring the purest, most natural product.</p>
+                    <p>Based in Nairobi, we bring this liquid gold directly to your doorstep, preserving all the natural enzymes, vitamins, and minerals that make Baringo honey so special. Each jar contains the rich flavors and health benefits of Kenya's unique flora.</p>
+                    <p>Our commitment to quality and sustainability means you're not just buying honey - you're supporting local beekeepers and preserving Kenya's natural heritage.</p>
+                </div>
+                <div class="about-image">
+                    <img src="honey-jars.jpg" alt="Baringo Honey Jars" width="400">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Showcase -->
+    <section class="product-showcase" id="products">
+        <div class="container">
+            <h2 class="section-title">Our Products</h2>
+            <p class="section-subtitle">Experience the rich flavors of authentic Kenyan honey</p>
+            
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="honey-pouring.jpg" alt="Raw Honey Pouring">
+                    </div>
+                    <div class="product-info">
+                        <h3>Raw Baringo Honey</h3>
+                        <p>Unfiltered, unpasteurized honey with all its natural enzymes and nutrients intact. Perfect for daily use and health benefits.</p>
+                        <div class="product-price">KES 1,200</div>
+                        <a href="#" class="btn">Add to Cart</a>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="honey-jars.jpg" alt="Honey Jars">
+                    </div>
+                    <div class="product-info">
+                        <h3>Organic Baringo Honey</h3>
+                        <p>Certified organic honey from beekeepers who follow sustainable practices. Free from pesticides and chemicals.</p>
+                        <div class="product-price">KES 1,500</div>
+                        <a href="#" class="btn">Add to Cart</a>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="honey-jars.jpg" alt="Honey Collection">
+                    </div>
+                    <div class="product-info">
+                        <h3>Honey Gift Set</h3>
+                        <p>Three jars of our finest honey varieties, beautifully packaged - perfect for gifting or sharing with family.</p>
+                        <div class="product-price">KES 3,500</div>
+                        <a href="#" class="btn">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Delivery Info Section -->
+    <section class="delivery-info" id="delivery">
+        <div class="container">
+            <h2 class="section-title">Delivery Information</h2>
+            <p class="section-subtitle">Fast and reliable delivery across Kenya</p>
+            
+            <div class="delivery-grid">
+                <div class="delivery-item">
+                    <i class="fas fa-truck"></i>
+                    <h3>Standard Delivery</h3>
+                    <p>3-5 business days delivery within Nairobi</p>
+                    <p class="product-price">KES 200</p>
+                </div>
+                
+                <div class="delivery-item">
+                    <i class="fas fa-shipping-fast"></i>
+                    <h3>Express Delivery</h3>
+                    <p>Next business day delivery within Nairobi</p>
+                    <p class="product-price">KES 500</p>
+                </div>
+                
+                <div class="delivery-item">
+                    <i class="fas fa-globe-africa"></i>
+                    <h3>Nationwide Delivery</h3>
+                    <p>5-7 business days delivery across Kenya</p>
+                    <p class="product-price">KES 400</p>
+                </div>
+                
+                <div class="delivery-item">
+                    <i class="fas fa-hand-holding-usd"></i>
+                    <h3>Free Delivery</h3>
+                    <p>Orders above KES 5,000 qualify for free delivery</p>
+                    <p>Minimum order required</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quality Section -->
+    <section class="quality" id="quality">
+        <div class="container">
+            <h2 class="section-title">Why Choose Baringo Honey?</h2>
+            <p class="section-subtitle">Our commitment to quality and sustainability</p>
+            
+            <div class="quality-grid">
+                <div class="quality-item">
+                    <i class="fas fa-leaf"></i>
+                    <h3>100% Natural</h3>
+                    <p>No additives, preservatives, or artificial ingredients. Just pure, raw honey as nature intended.</p>
+                </div>
+                
+                <div class="quality-item">
+                    <i class="fas fa-seedling"></i>
+                    <h3>Sustainably Sourced</h3>
+                    <p>Supporting local beekeepers and promoting sustainable agriculture practices in Baringo County.</p>
+                </div>
+                
+                <div class="quality-item">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Quality Guaranteed</h3>
+                    <p>Rigorous testing to ensure purity, quality, and the highest standards of food safety.</p>
+                </div>
+                
+                <div class="quality-item">
+                    <i class="fas fa-heart"></i>
+                    <h3>Health Benefits</h3>
+                    <p>Rich in antioxidants, enzymes, and natural nutrients that support overall wellness.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Customers Say</h2>
+            
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p>"The best honey I've ever tasted! The rich, complex flavors are incredible, and knowing it's sourced sustainably makes it even better. Plus, the delivery was fast and professional."</p>
+                    <div class="testimonial-author">- Sarah M., Nairobi</div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p>"As a health enthusiast, I appreciate the raw, unprocessed quality. It's become a staple in my kitchen and my daily wellness routine. The nationwide delivery was quick and efficient."</p>
+                    <div class="testimonial-author">- James K., Mombasa</div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p>"Beautiful packaging and exceptional customer service. The honey arrived fresh and delicious - will definitely be ordering again! Free delivery on my second order was a nice surprise."</p>
+                    <div class="testimonial-author">- Amina L., Kisumu</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Experience the Taste of Kenya?</h2>
+            <p>Order your jar of pure Baringo honey today and taste the difference that nature and tradition make.</p>
+            <a href="#shop" class="btn">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Baringo Honey</h3>
+                    <p>Bringing the golden nectar of Baringo to your table, with care and tradition.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#delivery">Delivery</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</p>
+                    <p><i class="fas fa-phone"></i> 0724530447</p>
+                    <p><i class="fas fa-envelope"></i> info@baringohoney.co.ke</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Business Hours</h3>
+                    <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+                    <p>Saturday: 10:00 AM - 4:00 PM</p>
+                    <p>Sunday: Closed</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Baringo Honey. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+      </html>
